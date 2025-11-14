@@ -1,15 +1,22 @@
+#######################################################
+# Terraform & Provider Configuration
+#######################################################
 terraform {
+  required_version = ">= 1.5.0"
+
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "4.50.0"
+      version = "~> 4.50.0"
     }
   }
 }
-
+#######################################################
+# Azure Provider
+#######################################################
 provider "azurerm" {
-  features {
+  features {}
 
-  }
-  subscription_id = "2611f6d1-5b7e-4c96-a399-7a221dcd1e52"
+  subscription_id = var.subscription_id
+
 }
